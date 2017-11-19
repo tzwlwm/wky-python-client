@@ -1,4 +1,4 @@
-# -python-
+# wky-python-client
 
 玩客云python客户端
 
