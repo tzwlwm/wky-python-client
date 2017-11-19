@@ -38,10 +38,10 @@ import json
 headers = {'user-agent': "Mozilla/5.0"}
 #登陆
 #https://account.onethingpcs.com/user/login?appversion=1.4.8    （POST）
-phone = '13000000000'
+phone = '13000000000'    #测试时请替换为已注册玩客云的手机号
 deviceid = md5(phone)[0:16].upper()
 imeiid = str(pow(int(phone), 2))[0:14]
-pwd = GetPwd('12345678')
+pwd = GetPwd('12345678')    #测试时请替换为对应手机号的密码
 body = dict(deviceid = deviceid, imeiid = imeiid, phone = phone, pwd = pwd, account_type = '4')
 sign = GetSign(body)
 body = dict(deviceid = deviceid, imeiid = imeiid, phone = phone, pwd = pwd, account_type = '4', sign = sign)
