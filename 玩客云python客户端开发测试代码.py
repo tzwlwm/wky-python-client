@@ -48,8 +48,8 @@ body = dict(deviceid = deviceid, imeiid = imeiid, phone = phone, pwd = pwd, acco
 url = 'https://account.onethingpcs.com/user/login?appversion=1.4.8'
 cookies = None
 r = requests.post(url = url, data = body, verify = False, headers = headers, cookies = cookies, timeout = 10)
-sessionid = r.headers.get('Set-Cookie')[10:42]
-userid = json.loads(r.content.decode('utf-8')).get('data').get('userid')
+sessionid = r.cookies.get('sessionid')
+userid = r.cookies.get('userid')
 
 
 #获取近期收益
